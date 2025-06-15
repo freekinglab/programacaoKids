@@ -1,0 +1,5 @@
+filters:
+  - true
+commentBody: |
+  Este repositório não aceita pull requests externos. Obrigado pela compreensão!
+addLabel: false
