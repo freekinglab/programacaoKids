@@ -393,7 +393,7 @@ body {
 .module-6 {
     margin: 0 auto;
     padding: 10px 20px;
-    width: 75%;
+    width: 80%;
     min-height: 512px;
     aspect-ratio: 1 / 1;
     text-align: center;
@@ -450,7 +450,7 @@ body {
 
 .module-6 ul {
     margin-top: 30px;
-    width: 60%;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -530,6 +530,9 @@ body {
         font-size: 1rem;
     }
 
+
+
+
     .module-6 ul li {
         font-size: 1rem;
     }
@@ -540,7 +543,7 @@ body {
         font-size: 2rem;
     }
     .subtitle {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 
     .module-cloud {
@@ -565,6 +568,16 @@ body {
 
     .module-cloud p {
         font-size: 0.9rem;
+    }
+    .module-6 {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .module-6 ul {
+        margin-top: 30px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
