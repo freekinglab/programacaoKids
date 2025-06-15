@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cartoon Plane
+* source:	https://sketchfab.com/3d-models/cartoon-plane-2fa3599b011840b8bb3676f5081cf72a
+* author:	Mrtonski (https://sketchfab.com/Mrtonski1.)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cartoon Plane" (https://sketchfab.com/3d-models/cartoon-plane-2fa3599b011840b8bb3676f5081cf72a) by Mrtonski (https://sketchfab.com/Mrtonski1.) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

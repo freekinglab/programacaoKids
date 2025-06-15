@@ -1,0 +1,585 @@
+:root {
+    --primary-text-color: #333;
+    --color-blue: #0056b3;
+    --color-blue-dark: #002d5e;
+    --color-white: #fff;
+    --cloud-gradient-color: #e6e6e6;
+    --shadow-color-light: rgba(0, 0, 0, 0.1);
+    --shadow-color-dark: rgba(0, 0, 0, 0.4);
+    --shadow-color-blue: rgba(2, 52, 87, 0.99);
+
+    --font-family-primary: Arial, sans-serif;
+    --font-family-headings: 'Fredoka One', cursive;
+
+    --base-line-height: 1.2;
+}
+
+body {
+    background-color: rgb(111, 195, 255);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: var(--primary-text-color);
+    font-family: var(--font-family-primary);
+    line-height: var(--base-line-height);
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Inicio Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.main-title {
+    font-family: var(--font-family-headings);
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--color-white);
+    text-shadow: 3px 3px 6px var(--shadow-color-blue);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: var(--color-blue-dark); 
+    text-shadow: 1px 1px 5px var(--shadow-color-dark);
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+    animation: bounce-up 2s infinite ease-in-out;
+}
+
+/* Icone rolar para cima */
+.scroll-up-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.scroll-up-icon svg {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    fill: var(--color-blue-dark);
+    animation: bounce-up 2s ease-in-out infinite;
+}
+
+@keyframes bounce-up {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-7px); }
+}
+
+/* Inicio Nuvens de Background */   
+/* Sistema de 10 Nuvens de Background */
+#background-wrap {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Formato das Nuvens de Background */
+.cloud {
+    background: var(--color-white);   
+    background: linear-gradient(to bottom, var(--color-white) 5%, var(--cloud-gradient-color) 100%);
+    border-radius: 100px;
+    box-shadow: 0 8px 5px var(--shadow-color-light);
+    height: 120px;
+    position: relative;
+    width: 350px;
+}
+
+.cloud:after, .cloud:before {
+    background: var(--color-white);
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+.cloud:after {
+    border-radius: 100px;
+    height: 100px;
+    left: 50px;
+    top: -50px;
+    width: 100px;
+}
+
+.cloud:before {
+    border-radius: 200px;
+    width: 180px;
+    height: 180px;
+    right: 50px;
+    top: -90px;
+}
+
+/* KEYFRAMES PARA ANIMAÇÃO DAS NUVENS DE BACKGROUND */
+@keyframes animateCloud {
+    0% { transform: translateX(-1000px); }
+    100% { transform: translateX(100vw); }
+}
+
+/* ESTILO BASE PARA GRUPOS DE NUVENS */
+.cloud-group {
+    position: absolute;
+    width: 1500px;
+}
+
+/* Nuvens background - posicionamento absoluto e animação */
+.x1 {
+    position: absolute;
+    top: 5%;
+    animation: animateCloud 35s linear infinite;
+    animation-delay: -5s;
+}
+
+/* GRUPO DE NUVENS 2 e 3 */
+.group-2-3 {
+    position: absolute;
+    top: 20%;
+    animation: animateCloud 30s linear infinite;
+}
+
+.x2 {
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    z-index: 1;
+    transform: scale(0.3);
+    opacity: 0.7;
+}
+
+.x3 {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    z-index: 2;
+    transform: scale(0.5);
+}
+
+.x4 {
+    position: absolute;
+    top: 35%;
+    animation: animateCloud 45s linear infinite;
+    transform: scale(0.25);
+    opacity: 0.5;
+    animation-delay: -25s;
+}
+
+.x5 {
+    position: absolute;
+    top: 40%;
+    animation: animateCloud 25s linear infinite;
+    transform: scale(0.55);
+    animation-delay: -10s;
+}
+
+/* GRUPO DE NUVENS 6 e 7 */
+.group-6-7 {
+    position: absolute;
+    top: 60%;
+    animation: animateCloud 22s linear infinite;
+    animation-delay: -8s;
+}
+
+.x6 {
+    position: absolute;
+    top: 70px;
+    left: 150px;
+    z-index: 1;
+    transform: scale(0.45);
+    opacity: 0.8;
+}
+
+.x7 {
+    position: absolute;
+    top: 120px;
+    left: 180px;
+    z-index: 2;
+    transform: scale(0.6);
+}
+
+.x8 {
+    position: absolute;
+    top: 75%;
+    animation: animateCloud 16s linear infinite;
+    animation-delay: -3s;
+}
+
+.x9 {
+    position: absolute;
+    top: 88%;
+    animation: animateCloud 32s linear infinite;
+    transform: scale(0.5);
+    animation-delay: -20s;
+}
+
+.x10 {
+    position: absolute;
+    top: 92%;
+    animation: animateCloud 24s linear infinite;
+    transform: scale(0.55);
+    animation-delay: -12s;
+}
+
+/* Fim Nuvens de Background */
+
+/* Inicio Banner airplane */
+.airplaneBanner {
+    background-image: url('aviaoBannerT.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    width: 400px;
+    height: 80px;
+}
+
+@keyframes flyAcrossAirplane {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+@keyframes bounceAirplane {
+    0% { transform: translateY(0px); }
+    20% { transform: translateY(35px); }
+    40% { transform: translateY(55px); }
+    60% { transform: translateY(-20px); }
+    80% { transform: translateY(30px); }
+    100% { transform: translateY(0px); }
+}
+
+.a1 {
+    position: absolute;
+    top: 55%;
+    animation: flyAcrossAirplane 8s linear infinite;
+    animation-delay: -8s;
+}
+
+#bouncePlane {
+    animation: bounceAirplane 4s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(2, 21, 56, 0.2));
+}
+
+/* Fim banner airplane */
+
+/* SEÇÃO DOS MÓDULOS */
+.modules-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.module-cloud {
+    position: relative;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 512px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.module-cloud.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.cloud-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    filter: blur(10px);
+    transform: scale(0);
+    transition: filter 1.2s ease-out, transform 1s ease-out;
+    pointer-events: none;
+}
+
+.module-cloud.is-visible .cloud-bg {
+    filter: blur(0px);
+    transform: scale(1);
+}
+
+.module-content {
+    position: relative;
+    z-index: 1;
+    color: var(--primary-text-color);
+    filter: blur(10px);
+    transform: scale(0);
+    transition: filter 1.2s ease-out, transform 1s ease-out;
+}
+
+.module-cloud.is-visible .module-content {
+    filter: blur(0px);
+    transform: scale(1);
+}
+
+/* Classe base para módulos comuns - OTIMIZAÇÃO */
+.module-base {
+    width: 60%;
+    min-height: 512px;
+    aspect-ratio: 1 / 1;
+}
+
+.module-1, .module-2, .module-3, .module-4, .module-5 {
+    width: 60%;
+    min-height: 512px;
+    aspect-ratio: 1 / 1;
+}
+
+.module-2 {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 500px;
+}
+
+.module-3 {
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+.module-4 {
+    margin-left: auto;
+    margin-right: 15%;
+    margin-top: 300px;
+}
+
+.module-5 {
+    margin-left: 25%;
+    margin-right: auto;
+    margin-top: 500px;
+}
+
+.module-6 {
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 75%;
+    min-height: 512px;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+}
+
+.module-cloud h1, .module-cloud h2, .module-cloud h3 {
+    text-shadow: 2px 2px 4px var(--color-white), 0 0 6px var(--color-white);
+}
+
+/* Estilos para o texto dentro das nuvens (placeholders) */
+.module-cloud p {
+    font-size: 1rem;   
+    line-height: var(--base-line-height);
+}
+
+.module-cloud h2, .module-cloud h3 {
+    font-family: var(--font-family-headings);
+    color: var(--color-blue);
+    padding: 0;
+    margin: 0;
+    line-height: var(--base-line-height);
+}
+
+.module-cloud h2 {
+    font-size: 2rem;
+}
+
+.module-cloud h3 {
+    font-size: 1.6rem;
+}
+
+.module-cloud ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.module-cloud ul li {
+    margin-bottom: 10px;
+    line-height: var(--base-line-height);
+    padding-left: 25px;
+    position: relative;
+    font-weight: bolder;
+}
+
+.module-cloud ul li::before {
+    content: '✓';
+    color: var(--color-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.module-6 ul {
+    margin-top: 30px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.module-6 ul li {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.module-6 h2 {
+    color: var(--color-blue);
+    font-weight: lighter;
+    text-shadow: none;
+}
+
+/* Início Estilos para o link de download */
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: underline;
+    color: var(--primary-text-color);
+    transition: all 0.3s ease;
+    font-weight: bolder;
+}
+
+.download-link:hover {
+    color: var(--color-blue);
+}
+
+.download-link:hover svg {
+    fill: white;
+}
+
+.download-link svg {
+    transition: fill 0.3s ease;
+    flex-shrink: 0;
+}
+/* Fim do link de download */
+
+/* RESPONSIVIDADE */
+@media only screen and (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .modules-section {
+        padding: 10px 10px 200px 10px;
+    }
+
+    .module-cloud {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px 20px;
+        min-height: 150px;
+    }
+
+    .module-2 { margin-top: 300px; }
+    .module-3 { margin-top: 150px; }
+    .module-4 { margin-top: 200px; }
+    .module-5 { margin-top: 300px; }
+    .module-6 {
+        margin-top: 250px;
+        min-height: 250px;
+        padding: 50px 30px;
+    }
+
+    .module-cloud h3 {
+        font-size: 1.5rem;
+    }
+
+    .module-cloud p {
+        font-size: 1rem;
+    }
+
+    .module-6 ul li {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .module-cloud {
+        width: 100%;
+        padding: 20px 10px;
+        min-height: 120px;
+    }
+
+    .module-2 { margin-top: 200px; }
+    .module-3 { margin-top: 100px; }
+    .module-4 { margin-top: 150px; }
+    .module-5 { margin-top: 200px; }
+    .module-6 {
+        margin-top: 180px;
+        min-height: 200px;
+        padding: 40px 20px;
+    }
+
+    .module-cloud h3 {
+        font-size: 1.3rem;
+    }
+
+    .module-cloud p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilos para o container do avião 3D */
+#airplane-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+}
+
+#airplane-container canvas {
+    display: block;
+}

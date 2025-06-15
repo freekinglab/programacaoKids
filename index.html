@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oficina de Programação - ETAPA 2 Refinada</title>
+       
+    </style>
+
+    <!-- Script para adicionar a âncora inicial e INICIAR leitura da página pelo rodapé -->
+    <script>
+      // Verifica se a URL NÃO tem um hash (usuário acessou a URL principal)
+      if (!window.location.hash) {
+        // Substitui a URL atual pela mesma URL + o hash da base
+        // Isso faz o navegador carregar a página já na âncora sem adicionar ao histórico
+        window.location.replace(window.location.href + '#baseBase');
+      }
+      // Se a URL JÁ tiver um hash (ex: #outra-secao), o script não faz nada,
+      // permitindo que o navegador lide com essa âncora diretamente.
+    </script>
+
+        <link rel="stylesheet" href="styles.css">
+        
+        <!-- Fontes externas -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">        
+        
+        <!-- Bibliotecas externas para o avião - com defer -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+        
+        <!-- Script principal (avião e nuvens-módulos) com defer (chamado por último) -->
+        <script src="app.js" defer></script>
+    </head>
+<body>
+    <!-- Sistema de 10 nuvens de background -->
+    <div id="background-wrap">
+        <div class="x1">
+            <div class="cloud"></div>
+        </div>
+
+        <!-- Grupo de nuvens 2 e 3 -->
+        <div class="cloud-group group-2-3">
+            <div class="x2">
+                <div class="cloud"></div>
+            </div>
+            <div class="x3">
+                <div class="cloud"></div>
+            </div>
+        </div>
+
+        <div class="a1">
+                <div class="aviaoBanner"></div>
+        </div>
+
+        <!-- Nuvens individuais restantes -->
+        <div class="x4">
+            <div class="cloud"></div>
+        </div>
+
+        <div class="x5">
+            <div class="cloud"></div>
+        </div>
+
+        <!-- Grupo de nuvens 6 e 7 -->
+        <div class="cloud-group group-6-7">
+            <div class="x6">
+                <div class="cloud"></div>
+            </div>
+            <div class="x7">
+                <div class="cloud"></div>
+            </div>
+        </div>
+
+        <!-- Nuvens individuais restantes -->
+        <div class="x8">
+            <div class="cloud"></div>
+        </div>
+
+        <div class="x9">
+            <div class="cloud"></div>
+        </div>
+
+        <div class="x10">
+            <div class="cloud"></div>
+        </div>
+
+        <!-- Container para o canvas do avião 3D -->
+        <div class="a1">
+            <div class="airplaneBanner" id="bouncePlane"></div>
+        </div>
+
+    </div><!-- Fim do background-wrap -->
+
+    <!-- Container para o canvas do avião 3D -->
+    <div id="airplane-container"></div>
+
+    <!-- Seção dos módulos -->
+    <section class="modules-section">
+
+            <!-- Nuvem Módulo 6 (Objetivo Final) -->
+            <div class="module-cloud module-6">
+                <svg class="cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="#FFAC33">
+                      <path fill="#FFAC33" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828 2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/>
+                      <circle cx="18" cy="18" r="10" fill="#FFAC33"/>
+                    </svg>
+                  </svg>
+                <div class="module-content">
+                     <h2>OBJETIVO</h2>
+                    <ul>
+                        <li>Jovens que não apenas consomem tecnologia, mas a compreendem e criam.</li>
+                        <li>Portfólio com jogo, site, app e software.</li>
+                        <li>Confiança e base de conhecimento para explorar o universo tech.</li>
+                        <li>Habilidades de lógica, resolução de problemas e criatividade aprimoradas.</li>
+                    </ul>
+                    <p>
+                        <a href="apresentacaoCG.pdf" download="Apresentacao-CG.pdf" class="download-link">
+                            <svg width="24" height="24" viewBox="-4 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M25.6686 26.0962C25.1812 26.2401 24.4656 26.2563 23.6984 26.145C22.875 26.0256 22.0351 25.7739 21.2096 25.403C22.6817 25.1888 23.8237 25.2548 24.8005 25.6009C25.0319 25.6829 25.412 25.9021 25.6686 26.0962ZM17.4552 24.7459C17.3953 24.7622 17.3363 24.7776 17.2776 24.7939C16.8815 24.9017 16.4961 25.0069 16.1247 25.1005L15.6239 25.2275C14.6165 25.4824 13.5865 25.7428 12.5692 26.0529C12.9558 25.1206 13.315 24.178 13.6667 23.2564C13.9271 22.5742 14.193 21.8773 14.468 21.1894C14.6075 21.4198 14.7531 21.6503 14.9046 21.8814C15.5948 22.9326 16.4624 23.9045 17.4552 24.7459ZM14.8927 14.2326C14.958 15.383 14.7098 16.4897 14.3457 17.5514C13.8972 16.2386 13.6882 14.7889 14.2489 13.6185C14.3927 13.3185 14.5105 13.1581 14.5869 13.0744C14.7049 13.2566 14.8601 13.6642 14.8927 14.2326ZM9.63347 28.8054C9.38148 29.2562 9.12426 29.6782 8.86063 30.0767C8.22442 31.0355 7.18393 32.0621 6.64941 32.0621C6.59681 32.0621 6.53316 32.0536 6.44015 31.9554C6.38028 31.8926 6.37069 31.8476 6.37359 31.7862C6.39161 31.4337 6.85867 30.8059 7.53527 30.2238C8.14939 29.6957 8.84352 29.2262 9.63347 28.8054ZM27.3706 26.1461C27.2889 24.9719 25.3123 24.2186 25.2928 24.2116C24.5287 23.9407 23.6986 23.8091 22.7552 23.8091C21.7453 23.8091 20.6565 23.9552 19.2582 24.2819C18.014 23.3999 16.9392 22.2957 16.1362 21.0733C15.7816 20.5332 15.4628 19.9941 15.1849 19.4675C15.8633 17.8454 16.4742 16.1013 16.3632 14.1479C16.2737 12.5816 15.5674 11.5295 14.6069 11.5295C13.948 11.5295 13.3807 12.0175 12.9194 12.9813C12.0965 14.6987 12.3128 16.8962 13.562 19.5184C13.1121 20.5751 12.6941 21.6706 12.2895 22.7311C11.7861 24.0498 11.2674 25.4103 10.6828 26.7045C9.04334 27.3532 7.69648 28.1399 6.57402 29.1057C5.8387 29.7373 4.95223 30.7028 4.90163 31.7107C4.87693 32.1854 5.03969 32.6207 5.37044 32.9695C5.72183 33.3398 6.16329 33.5348 6.6487 33.5354C8.25189 33.5354 9.79489 31.3327 10.0876 30.8909C10.6767 30.0029 11.2281 29.0124 11.7684 27.8699C13.1292 27.3781 14.5794 27.011 15.985 26.6562L16.4884 26.5283C16.8668 26.4321 17.2601 26.3257 17.6635 26.2153C18.0904 26.0999 18.5296 25.9802 18.976 25.8665C20.4193 26.7844 21.9714 27.3831 23.4851 27.6028C24.7601 27.7883 25.8924 27.6807 26.6589 27.2811C27.3486 26.9219 27.3866 26.3676 27.3706 26.1461ZM30.4755 36.2428C30.4755 38.3932 28.5802 38.5258 28.1978 38.5301H3.74486C1.60224 38.5301 1.47322 36.6218 1.46913 36.2428L1.46884 3.75642C1.46884 1.6039 3.36763 1.4734 3.74457 1.46908H20.263L20.2718 1.4778V7.92396C20.2718 9.21763 21.0539 11.6669 24.0158 11.6669H30.4203L30.4753 11.7218L30.4755 36.2428ZM28.9572 10.1976H24.0169C21.8749 10.1976 21.7453 8.29969 21.7424 7.92417V2.95307L28.9572 10.1976ZM31.9447 36.2428V11.1157L21.7424 0.871022V0.823357H21.6936L20.8742 0H3.74491C2.44954 0 0 0.785336 0 3.75711V36.2435C0 37.5427 0.782956 40 3.74491 40H28.2001C29.4952 39.9997 31.9447 39.2143 31.9447 36.2428Z" fill="#EB5757"/>
+                              </svg>
+                            <span>Baixar Programação do Curso</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Nuvem Módulo 5 -->
+            <div class="module-cloud module-5">
+                <svg class="cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fafafa">
+                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1z"/>
+                </svg>
+                <div class="module-content">
+                    <h2>Módulo 5</h2>
+                    <h3>App Android e Softwares</h3>
+                    <ul>
+                        <li>RLM e RC</li>
+                        <li>Introdução ao App Inventor (MIT/ Google)</li>
+                        <li>Python com Replit</li>
+                        <li>Instalação do meu app Android</li>
+                        <li>Instalação do meu software</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Nuvem Módulo 4 -->
+            <div class="module-cloud module-4">
+                <svg class="cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#ffffff">
+                    <path d="M470.7 306.2c3-11.2 4.7-22.9 4.7-35c0-75.8-61.4-137.1-137.1-137.1c-19.5 0-38 4.1-54.7 11.4c-16.8-39-55.6-66.3-100.7-66.3c-60.6 0-109.7 49.1-109.7 109.7c0 4.1.8 7.9 1.2 11.9C30.5 221.1 0 265.3 0 316.9c0 70.7 57.3 128 128 128h310.9c40.4 0 73.1-32.7 73.1-73.1c0-29-16.9-53.7-41.3-65.6z"/>
+                </svg>
+                
+                <div class="module-content">
+                    <h2>Módulo 4</h2>
+                    <h3>Roblox e Wordpress</h3>
+                    <ul>
+                        <li>RLM e RC</li>
+                        <li>Introdução ao Roblox Studio (games)</li>
+                        <li>Meu primeiro "Obby"</li>
+                        <li>O que é Wordpress?</li>
+                        <li>Meu site de games com TasteWp</li>
+                        <li>Publicando meu jogo online</li>
+                        <li>Publicando meu site de games online</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Nuvem Módulo 3 -->
+            <div class="module-cloud module-3">
+                <svg class="cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#ffffff">
+                    <path d="M14.55 9.704c3.46-3.55 9.14-3.61 12.69-.15c3.28 3.21 3.58 8.33.86 11.89a8.372 8.372 0 0 1-6.83 3.52H8.58c-2.11 0-3.98-1-5.17-2.56A6.47 6.47 0 0 1 2 18.374a6.457 6.457 0 0 1 6.589-6.458a4.04 4.04 0 0 1 5.624-1.849c.109-.123.22-.244.337-.363Z"/>
+                </svg>
+                
+                <div class="module-content">
+                    <h2>Módulo 3</h2>
+                    <h3>Construindo uma "loja" Xbox</h3>
+                    <ul>
+                        <li>Como a Internet Funciona?</li>
+                        <li>Introdução ao HTML</li>
+                        <li>Introdução ao CSS</li>
+                        <li>Conhecendo o Replit e o Codepen</li>
+                        <li>Publicando minha loja online</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Nuvem Módulo 2 -->
+            <div class="module-cloud module-2">
+                <svg class="cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff">
+                    <path d="M2 13.5C2 17.9 5.667 19 7.5 19h10c1.5 0 4.5-.9 4.5-4.5S19 10 17.5 10c0-1.5-1.5-5-5-5c-2.8 0-4.5 2-5 3C5.667 8 2 9.1 2 13.5z"/>
+                </svg>
+                <div class="module-content">
+                    <h2>Módulo 2</h2>
+                    <h3>Criando Meu Jogo!</h3>
+                    <ul>
+                        <li>Conhecendo o Scratch (MIT)</li>
+                        <li>RLM - Raciocínio Lógico Matemático</li>
+                        <li>RC - Raciocínio Computacional</li>
+                        <li>Personagens e movimento</li>
+                        <li>Condições e variáveis</li>
+                        <li>Publicando meu jogo online</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Nuvem Módulo 1 -->
+            <div class="module-cloud module-1">
+                <svg class="cloud-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffffff">
+                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1z"/>
+                </svg>
+                <div class="module-content">
+                    <h2>Módulo 1</h2>
+                    <h3>Explicando a Mágica</h3>
+                    <ul>
+                        <li>O que é um computador?</li>
+                        <li>Linguagem dos computadores</li>
+                        <li>Introdução aos códigos</li>
+                        <li>RLM - Raciocínio Lógico Matemático</li>
+                        <li>RC - Raciocínio Computacional</li>
+                        <li>Utilização de IA</li>
+                    </ul>
+                </div>
+            </div>
+
+    </section>
+
+    <section class="hero-section">
+        <div class="hero-content scroll-up-icon" aria-label="Role para cima">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" fill="#000000" role="img" aria-hidden="false" focusable="false">
+                <path d="M263.535,248.453c-4.16-4.16-10.88-4.16-15.04,0L3.054,493.787c-4.053,4.267-3.947,10.987,0.213,15.04c4.16,3.947,10.667,3.947,14.827,0l237.867-237.76l237.76,237.76c4.267,4.053,10.987,3.947,15.04-0.213c3.947-4.16,3.947-10.667,0-14.827L263.535,248.453z"/>
+                <path d="M18.201,263.493l237.76-237.76l237.76,237.76c4.267,4.053,10.987,3.947,15.04-0.213c3.947-4.16,3.947-10.667,0-14.827L263.535,3.12c-4.16-4.16-10.88-4.16-15.04,0L3.054,248.453c-4.053,4.267-3.947,10.987,0.213,15.04C7.534,267.547,14.041,267.547,18.201,263.493z"/>
+              </svg>
+              <p class="subtitle">Role para CIMA e decole nesta aventura!</p>
+
+              <h1 class="main-title" id="baseBase">Oficina de Programação</h1>
+        </div>
+    </section>
+
+</body>
+</html>
