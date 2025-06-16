@@ -559,15 +559,15 @@ body {
     }
 
     .cloud {
-        width: 90vw;
-        max-width: 350px;
+        width: 98vw;
+        max-width: 98vw;
         min-width: 120px;
     }
     
     .cloud-group {
-        width: 100vw;
+        width: 98vw;
         min-width: unset;
-        max-width: 100vw;
+        max-width: 98vw;
     }
     
     .airplaneBanner {
@@ -577,7 +577,7 @@ body {
     }
 
     .module-cloud {
-        width: 100%;
+        width: 98vw;
         padding: 20px 10px;
         min-height: 120px;
     }
@@ -591,23 +591,23 @@ body {
         margin-right: auto !important;
         margin-top: 180px !important;
         margin-bottom: 0 !important;
-        width: 98vw !important;
-        max-width: 100vw!important;
+        width: 96vw!important;
+        max-width: 96vw!important;
         min-width: 0;
         left: 0;
         right: 0;
     }
 
     .module-6 {
-        width: 100%;
+        width: 98vw;
+        max-width: 98vw!important;
+        min-width: 0;      
         margin: 0 auto!important;
         min-height: 200px;
-        padding: 40px 20px;
-        width: 98vw !important;
-        max-width: 100vw!important;
-        min-width: 0;
+        padding: 40px 10px;
         left: 0;
         right: 0;
+        margin-left: -15px!important;
     }
 
     .module-cloud h3 {
@@ -620,7 +620,7 @@ body {
 
     .module-6 ul {
         margin-top: 30px;
-        width: 90%;
+        width: 98%;
         margin-left: auto;
         margin-right: auto;
     }
